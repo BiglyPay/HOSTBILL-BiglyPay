@@ -3,6 +3,7 @@
  * BiglyPay Payment Gateway for HostBill
  * Ported directly from WHMCS version
  */
+define('BIGLYPAY_MODULE_VERSION', '1.0.0');
 
 if (!defined("HOSTBILL_PATH")) {
     die("This file cannot be accessed directly");
