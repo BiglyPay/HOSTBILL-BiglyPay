@@ -3,6 +3,13 @@
  * BiglyPay Callback Handler for HostBill
  * Based on WHMCS callback structure, adapted for HostBill
  */
+function transaction_exists($txId) {
+    $count = db()->getOne(
+        "SELECT COUNT(*) FROM `invoice_payments` WHERE `txid` = %s",
+        [$txId]
+    );
+    return $count > 0;
+}
 
 require_once '../../../init.php';
 require_once '../../../includes/hosting.php';
